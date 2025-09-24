@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@angular/core": "^19.2.14",
+    "@angular/platform-browser": "^19.2.14"
+  },
+  "devDependencies": {
+    "@angular/cli": "^19.2.15"
+  }
+}

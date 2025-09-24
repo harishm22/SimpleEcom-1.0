@@ -1,0 +1,95 @@
+{
+  "info": {
+    "name": "SimpleEcom Cart Service Tests with Environment",
+    "_postman_id": "cart-service-tests-001",
+    "description": "Postman collection for testing Cart Service endpoints with JWT authentication",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add Item to Cart",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtToken}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productId\": 2,\n  \"quantity\": 10\n}\n\n// Note: Ensure productId corresponds to a valid product in the product-service database."
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/cart/items",
+          "host": [
+            "http://localhost:8083"
+          ],
+          "path": [
+            "api",
+            "cart",
+            "items"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Cart Items",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtToken}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/cart/items",
+          "host": [
+            "http://localhost:8083"
+          ],
+          "path": [
+            "api",
+            "cart",
+            "items"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Remove Item from Cart",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtToken}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/cart/items/1",
+          "host": [
+            "http://localhost:8083"
+          ],
+          "path": [
+            "api",
+            "cart",
+            "items",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
